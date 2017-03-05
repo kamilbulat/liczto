@@ -1,0 +1,54 @@
+body {
+    margin: 0 auto;
+    background-color: #CDA2F6;
+}
+#glowny {
+    margin-top:0px;
+    width: 960px;
+    margin-left: calc(50% - 480px);
+    background-color: transparent;
+    height: 100vh;
+    margin-bottom: 0px;
+}
+#logo {
+    height: 200px;
+    width: 200px;
+    margin-left:calc(50% - 100px);
+}
+div {
+   /* margin: 10px; */
+    background-color: #9878B6;
+}
+#logo {
+    
+}
+#logo1{
+    margin:0px;
+    width: 960px;
+
+}
+#glowny2 {
+    width: 60%;
+    float:left;
+    /*margin-left: 0px;*/
+    margin-right: 5px;
+    padding:1%;
+    height:150px;
+}
+#glowny3 {
+    width: 60%;
+    float:left;
+    /*margin-left: 5px;*/
+    margin-right: 0px;
+    height:300px;
+}
+.plus {
+    float: right;
+}
+#licz{
+ /*  margin-top: 320px; */ 
+    text-align: center;
+    width: 940px;
+    margin-left: 0px;
+    padding: 10px;
+}

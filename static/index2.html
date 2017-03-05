@@ -1,0 +1,177 @@
+<head>
+    <title>LiczTo!</title>
+	<meta charset="utf-8" />
+    <link href="css/style2.css" rel="stylesheet" />
+    
+    <script src="./js/jquery-3.1.0.min.js"></script>
+    <script>
+
+            var koszty = []
+            var users = []
+            var suma = 0
+
+            var dodaj = function(){
+                var money = $("#money").val()
+                var user = $("#user").val()
+                
+                if(money == "" || user == ""){
+                    alert("wincyj danych kurfa")
+                }else{
+                    var div = $("<DIV>")
+                    div.text("Zapłacił: " + user + "\t Ilość: " + money)
+                    div.width("93%")
+                    div.css("padding","5px")
+                    div.css("background-color","#CDA2F6")
+                    $("#glowny3").append(div)
+
+                    $("#user").val("")
+                    $("#money").val("")
+
+                    var obj = {
+                        user: user,
+                        money: money
+                    }
+                    
+                    if(users.length < 1){
+                        console.log("dlugosc tablicy: " + users.length)
+                        users.push(obj)
+                    }else{
+                        for(var i=0; i<users.length; i++){
+                            //console.log("dlugosc tablicy users: " + users.length)
+                            if(users[i].user == obj.user){
+                                console.log("z tab users: " + users[i].user)
+                                console.log("dodawany obj: " + obj.user)
+                                var d = parseInt(users[i].money)
+                                var e = parseInt(obj.money)
+                                users[i].money = d + e
+                                suma++
+                            }
+                        }
+                        if(suma == 0){
+                            users.push(obj)
+                        }
+                        
+                    }
+                    console.log(eval(users))
+                    koszty.push(obj)
+                    //console.log(koszty)  
+                }            
+                //tablica użytkowników
+ 
+            }
+            
+            var policz = function(){
+                    alert("POLICZ")
+                    //console.log("user: " + koszty[i].user)
+                    //console.log("money: " + koszty[i].money)
+                    var all = 0
+                    for(var i=0; i<users.length; i++){
+                        all += parseInt(users[i].money)
+                    }
+                    console.log("suma: " + all)
+                    
+                    var czesc = all/users.length
+                    console.log("czesc: " + czesc)
+                    
+                    console.log("BALANS:")
+                    for(var i=0; i<users.length; i++){
+                        var b = parseInt(users[i].money) - czesc
+                        console.log(users[i].user + ": " + b)
+                    }
+                    console.log(eval(koszty)) 
+
+                    document.getElementById("rozliczenia").style.display = "block"
+
+                    for(var i=0; i<users.length; i++){
+                        var div = document.createElement("div");
+                        var b = parseInt(users[i].money) - czesc;
+                        div.text = users[i].user + ": " + b;
+                        document.getElementById("rozliczenia").appendChild(div)
+                    }
+            }
+            
+    </script>
+    <style>
+                body {
+            margin: 0 auto;
+            background-color: #CDA2F6;
+        }
+        #glowny {
+            margin-top:0px;
+            width: 960px;
+            margin-left: calc(50% - 480px);
+            background-color: transparent;
+            height: 100vh;
+            margin-bottom: 0px;
+        }
+        #logo {
+            height: 200px;
+            width: 200px;
+            margin-left:calc(50% - 100px);
+        }
+        div {
+            background-color: #9878B6;
+        }
+        #logo1{
+            margin:0px;
+            width: 960px;
+
+        }
+        /*#glowny2 {
+            width: 475px;
+            float:left;
+            margin-left: 0px;
+            margin-right: 5px;
+            height:300px;
+        }*/
+        #glowny3 {
+            width: 475px;
+            float:right;
+            margin-left: 5px;
+            margin-right: 0px;
+            height:300px;
+        }
+        .plus {
+            float: right;
+        }
+        /*#licz{
+            margin-top: 320px; 
+            text-align: center;
+            width: 940px;
+            margin-left: 0px;
+            padding: 1%;*/
+        }
+        #rozliczenia{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="glowny">
+        <!--<div id="logo1">
+            <img src="gfx/logo.png" alt="logo" id="logo"/>
+        </div>-->
+        <div id="glowny2">
+            <div>
+            Nazwa użytkownika:
+            <br />
+            <input type="text" id="user" style="color: black">
+            <br />
+            Suma pieniędzy:
+            <br />
+            <input type="text" id="money" style="color: black">
+                
+                <img src="gfx/add.png" alt="plus" class="plus" onclick="dodaj()"/>
+                </div>
+        </div>
+        <div id="glowny3">
+           
+        </div>
+        <div id="licz" onclick="policz()">
+            POLICZ KOSZTY!
+        </div>
+        <div id="rozliczenia">
+            ROZLICZENIA:
+        </div>
+    </div>
+</body>

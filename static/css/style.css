@@ -1,0 +1,54 @@
+﻿    body {
+        margin:0;
+        padding:0;
+        }
+    
+    #left {
+        width:70%;
+        height: 100vh;
+        float:left;
+        background-color: #9878B6;
+        }
+
+    #right {
+        width: 30%;
+        height: 100vh;
+        float:right;
+        background-color: #CDA2F6;
+        }
+     #rejestracja {
+        width: 30%;
+        height: 100vh;
+        float:right;
+        background-color: #CDA2F6;
+        display:none;
+        }
+    div {
+       
+        }
+    img { 
+            width: 60%;
+            margin-left:20%;
+        }
+    #napis {
+            text-align: center;
+        }
+    .special {
+            color: red;
+        }
+    .motto {
+            color:white;
+        }
+    input{
+        display: block;
+        width: 70%;
+        margin-left: 12%;
+        margin-top: 1%;
+    }
+    input[id="login"]{
+        margin-top: 50%;
+    }
+    input[type="button"]{
+        font-size: 100%;
+        width: 70%;
+    }

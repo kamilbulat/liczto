@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+	<meta charset="utf-8" />
+    <script>
+        var newtable = function(){
+            document.write(" ")
+            var obj
+            $.ajax({
+                type: "POST",
+                url: "//localhost:3000/newtable",
+                contentType: "application/json",
+                data: obj,
+                dataType: "text",
+                success: function (req) {
+                    console.log(req)
+                    document.write(" ")
+                    document.write(req)
+                },
+                error: function (error) {
+                    alert("fail")
+                    console.log(error)
+                }
+            })
+        }
+    </script>
+    <link href="css/style3.css" rel="stylesheet" />
+    <link href="css/font.css" rel="stylesheet" />
+</head>
+<body>
+<div id="usr">
+    <div>
+        <img src="gfx/logo.png" alt="logo" width="40%" style="margin-left:calc(30%)"/>
+    </div>
+    <div id="nazwauzyt">
+        Witaj USER!
+
+    </div>
+    <div id="przyci" onclick="newtable()">
+
+        Dodaj nowe rozliczenie!
+    </div>
+</div>
+  <!--  <div id="historia">
+        <div id="napis">
+            Historia Twoich rozliczeń:
+        </div>
+
+
+    </div>-->
+</body>
+</html>

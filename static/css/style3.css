@@ -1,0 +1,48 @@
+﻿body {
+    margin: 0 auto;
+    background-color: #CDA2F6;
+}
+
+/*@media (min-width: 400px){
+	#usr, #historia{
+        float:none;
+        width:100vw;
+        height:30%;
+    }
+        
+}*/
+
+#usr {
+    background-color: #9878B6;
+    width:30%;
+    height:100vh;
+    float:left;
+}
+#nazwauzyt {
+    width:100%;
+    font-size:400%;
+    text-align:center;
+}
+#przyci {
+    width:100%;
+    margin-top:20%;
+    font-size: 400%;
+    text-align:center;
+
+}
+#przyci:hover {
+     background-color: white;
+     color:#9878B6;
+
+}
+#historia {
+    height:100vh;
+    width: 70%;
+    float:right;
+
+}
+#napis {
+    width:100%;
+    font-size: 600%;
+    text-align: center;
+}
